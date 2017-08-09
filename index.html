@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width", initial-scale=1.0>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="wagechart.js"></script>
+<link rel="stylesheet" href="wagechart.css">
+</head>
+  
+<body>
+<div id="container">
+  <div id="wagechart"></div>
+  <div id="horizonLine"></div>
+  <div id="divInfo">
+    <!-- 연도 및 시급: divLeft -> divCircle / infoYear / infoWageHourly
+         설명 및 기타: divRight / infoPrice / infoDesc-->
+    <div id='divLeft'>
+      <div id='divCircle'>
+        <div id='divYear'><span id='infoYear'>1988</span>년</div>
+        <div id='divHr'> </div>
+        <div id='infoWageHourly'>시급 0 원</div>
+      </div>
+    </div>
+    <div id='divRight'>
+      <div id='infoPrice'>라면 0 원 | 자장면 0 원 | 영화 0원</div>
+      <div id='divDesc'>
+        <p id='infoDesc'>그래프의 점들을 클릭하거나 위에 마우스를 올리면 설명을 볼 수 있습니다.</p>
+        <div style="margin-bottom:15px;">
+          <button id='btnPrev' type="button" style="width:35px;display:inline;"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+          <button id='btnNext' type="button" style="width:35px;display:inline;"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+          <button id='btnIntro' type="button" style="width:35px;display:inline;"><i class="fa fa-question" aria-hidden="true"></i></button>
+          <button id='btnInfo' type="button" style="width:35px;display:inline;"><i class="fa fa-exclamation" aria-hidden="true"></i></button>
+        </div>
+        <button id='btnCalc'type="button" style="width:150px;">1시간 일하면?</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div id="divTail" style="text-align:right;">박성렬<br><div id="mailTooltip" data-title="선택하고 Ctrl+C로 복사하세요."><input type="text" id="mail" value="sungryeolp@gmail.com" disabled></div><br>
+    <a href="https://www.linkedin.com/in/sungryeol-park-958861b8/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sgrl.park/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://www.instagram.com/rabelais/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    <a href="https://www.youtube.com/channel/UCuSxR59SKN6xEdU8ofGOv2Q"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+    <a href="http://www.todayhumor.co.kr/board/list.php?kind=member&mn=709192"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+
+  </div>
+</div>
+<div id="divBack" class="animBack"></div>
+
+<div class="modal fade" id="myModal" role="dialog" style="color:black;">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p id='modalHead'>1시간 일하면...</p></h4>
+        </div>
+        <div class="modal-body">
+          <p id='modalBody'>먹을 수 있는 것들</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+  
+</body>
+</html>
